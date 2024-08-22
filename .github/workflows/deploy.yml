@@ -28,11 +28,11 @@ jobs:
         with:
           node-version: "18"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
-      - name: Install Dependencies
-        run: npm install
+          cache-dependency-path: '**/package-lock.json'
       - name: Build Static Site
         run: |
           cd client
+          npm install
           npm run build
           touch build/.nojekyll
       - name: Upload Artifact
