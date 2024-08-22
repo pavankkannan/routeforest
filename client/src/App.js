@@ -1,7 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
-import Skeleton from 'react-loading-skeleton'
-import 'react-loading-skeleton/dist/skeleton.css'
 
 function SearchResultsList({ results, setResults, setInput, setPlayer }) {
 
@@ -254,7 +252,7 @@ function PlayerData({ playerName, isLoading, setIsLoading }) {
           // console.log(data)
         }
       )
-  }, [playerName,])
+  }, [playerName, setIsLoading])
   if (data == null || data.name !== playerName.replace("-", " ")) {
     return (
       <div className='PlayerData'>
@@ -265,8 +263,6 @@ function PlayerData({ playerName, isLoading, setIsLoading }) {
   }
   return (
     <div className='PlayerData'>
-      {/* <p><Skeleton/></p>
-      <p>{data.name || <Skeleton/>}</p> */}
       <Header data={data} isLoading={isLoading} setIsLoading={setIsLoading}/>
       <TopStats data={data}/>
       <CatchStatistics data={data}/>
