@@ -1,0 +1,59 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/deploy.yml
+      - client/**
+      - package*.json
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Detect package manager
+        id: detect-package-manager
+        run: |
+          echo "manager=npm" >> $GITHUB_OUTPUT
+          echo "command=ci" >> $GITHUB_OUTPUT
+          echo "runner=npx --no-install" >> $GITHUB_OUTPUT
+          exit 0
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+          cache: ${{ steps.detect-package-manager.outputs.manager }}
+      - name: Install Dependencies
+        run: npm install
+      - name: Build Static Site
+        run: |
+          cd client
+          npm run build
+          touch build/.nojekyll
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./client/build
+
+  deploy:
+    needs: build
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
