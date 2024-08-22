@@ -1,0 +1,309 @@
+:root {
+  --main-bg-color: red;
+}
+
+* {
+  margin: 0;
+  font-family: Helvetica;
+  /* background-color: #08432A; */
+}
+
+body {
+  background-color: #08432A;
+}
+
+.App {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #08432A;
+  /* background-image: linear-gradient(#07380b, black); */
+}
+
+
+
+
+.SearchBar {
+  height: 4vh;
+  width: 90vw;
+  margin-top: 2vh;
+  background-color: #1C6C49;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+}
+
+.searchIcon, .clearSearchIcon {
+  width: 10%;
+  height: 100%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+}
+
+
+.searchIcon img {
+  height: 60%;
+  background-color: transparent;
+  margin-right: 5px;
+  margin-left: 7.5px;
+  filter: invert(1);
+  object-fit: cover;
+  justify-self: start;
+}
+
+.inputField {
+  height: 100%;
+  width: 80%;
+  display: flex;
+  align-items: center;
+
+  color: white;
+  background-color: #1C6C49;
+  /* border-radius: 0 15px 15px 0; */
+  border: none;
+  box-sizing: border-box;
+}
+
+.clearSearchIcon img {
+  height: 60%;
+  object-fit: cover;
+  background-color: transparent;
+  filter: opacity(75%) invert(1);
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+
+.inputField::placeholder {
+  color: white;
+}
+
+.SearchResultsList {
+  position: absolute;
+  overflow-y: scroll;
+  height: 94vh;
+  background-color: #08432A;
+  z-index: 2;
+}
+
+.searchResult {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing:border-box;
+  padding: 7.5px 25px 7.5px 25px;
+  /* border-bottom: 1px solid #1C6C49; */
+  /* font-weight: bold; */
+  color: white;
+}
+
+.searchResult:nth-child(odd) {
+  background-color: #043922;
+}
+.searchResult:nth-child(even) {
+  background-color: #08432A;
+}
+
+.searchHeadshot {
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+  border-radius: 15px;
+  background-color: #44C37D;
+  
+}
+
+.searchResult p {
+  background-color: transparent;
+}
+
+.searchResult:hover {
+  background-color: #1C6C49;
+}
+
+/* START Header Styles */
+.Header {
+  height: 20vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  /* background-color: blue; */
+}
+
+#headshot {
+  height: 15vh;
+  width: 15vh;
+  object-fit: cover;
+  border-radius: 100px;
+  border: 2.5px solid white;
+  background-color: #44C37D;
+}
+
+.headerInfo {
+  height: 100px;
+  /* text-align: center; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: white;
+}
+.headerInfo p {
+  font-weight: bold;
+  font-size: 15px;
+}
+.headerInfo h1 {
+  /* border-top: 2.5px solid white; */
+  /* border-bottom: 2.5px solid white; */
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+/* END Header Styles */
+
+
+/* START TopStat Styles */
+.TopStats {
+  width: 100vw;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.topStat {
+  width: 34vw;
+  height: 100px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  color: white;
+  /* border-top: 1px solid white;
+  border-bottom: 1px solid white; */
+
+
+}
+
+#middle {
+  width: 33vw;
+  /* border-left: 1px solid white;
+  border-right: 1px solid white; */
+}
+/* END TopStat Styles */
+
+.RecYards {
+  color: white;
+}
+
+.topStatLabel {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.topStatText {
+  font-size: 24px;
+  font-weight: bold;
+  color: #44C37D;
+}
+
+.ranks {
+  text-align: center;
+}
+
+.rankText {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.rankText span {
+  color: #44C37D;
+  font-weight: bold;
+}
+
+.recYardsGraph {
+  width: 80vw;
+  height: 40px;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.recYardsLabel {
+  width: 80vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.airYards {
+  height: 100%;
+  width: 50%;
+  background-color: lightblue;
+}
+
+.yac {
+  height: 100%;
+  width: 50%;
+  background-color: lightcoral;
+  text-align: right;
+}
+
+.pie {
+  width: 80vw;
+}
+
+.field {
+  width: 90vw;
+  /* height: 90vw; */
+  border: 2px solid white;
+  /* transform-origin: top right; */
+  /* transform: rotate(-90deg) translate(-50%, -50%); */
+  background-color: #1C6C49;
+}
+
+.CatchStatistics {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modeHeader {
+  width: 100vw;
+  margin-top: 10px;
+  /* background-color: blue; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 2px;
+}
+
+.modeOption {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+}
+.modeHeader p {
+  color: white;
+  font-family: Helvetica;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 5px 0;
+}
+
+.modeBottomBorder {
+  height: 5px;
+  width: 104%;
+  background-color: white;
+  border-radius: 15px;
+}

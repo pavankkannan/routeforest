@@ -1,0 +1,48 @@
+None
+1	FLAT - 1
+2	SCREEN
+3	CORNER - 7
+4	HITCH (curl)
+5	IN - 6
+6	GO - (fade) 9 x
+7	CROSS
+8	ANGLE
+9	OUT - 5
+10	SLANT - 2
+11	POST - 8
+12	WHEEL - 
+13	undefined
+
+
+----
+  const [searchValue, setSearchValue] = useState("")
+  const [data, setData] = useState(null);
+
+  const onChange = (event) => {
+    setSearchValue(event.target.value)
+    console.log(event.target.value)
+  }
+
+  useEffect(() => {
+    fetch("/players")
+      .then(response => response.json())
+      .then(data => setData(data))
+  }, []);
+
+  return (
+    <div className='Search'>
+      <div className='searchBar'>
+        <div className='searchIcon'></div>
+        <input type='text' className='searchField' placeholder="Search for a Player" value={searchValue} onChange={onChange}></input>
+      </div>
+      <div className='dropdown'>
+        {data.filter(item => {
+          const searchTerm = searchValue.toLowerCase()
+          const name = item.name.toLowerCase()
+
+          return searchTerm && name.startsWith(searchTerm)
+        })
+        .map((item)=> (<div className='dropEntry'>{item.name}</div>))}
+      </div>
+    </div>
+  )
