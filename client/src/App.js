@@ -54,11 +54,11 @@ function SearchBar({ setResults, input, setInput }) {
   return (
     <div className='SearchBar'>
       <div className='searchIcon'>
-        <img src='static/searchIcon.png' alt=''/>
+        <img src={`${API_URL}/static/searchIcon.png`} alt=''/>
       </div>
       <input type='text' className='inputField' id='inputField' placeholder='Search for a player' value={input} onChange={(e) => handleChange(e.target.value)}/>
       <div className='clearSearchIcon'>
-        { input ? <img src='static/clearSearchIcon.webp' onClick={() => handleChange("")} alt=''/> : null }
+        { input ? <img src={`${API_URL}/static/clearSearchIcon.webp`} onClick={() => handleChange("")} alt=''/> : null }
       </div>
     </div>
   )
@@ -228,12 +228,12 @@ function CatchStatistics({ data }) {
       {mode === "charts" && 
         <div>
           <RecYards data={data}/>
-          <img src={`/static/pie.png?t=${Date.now()}`} className="pie" alt='pie'/>
+          <img src={`${API_URL}/static/pie.png?t=${Date.now()}`} className="pie" alt='pie'/>
         </div>
       }
       {mode === "field" && 
         <div>
-          <img src={`/static/annotatedField2.png?t=${Date.now()}`} className="field" alt='field'/>
+          <img src={`${API_URL}/static/annotatedField2.png?t=${Date.now()}`} className="field" alt='field'/>
         </div>
       }
     </div>
