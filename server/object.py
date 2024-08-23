@@ -1,4 +1,4 @@
-import data
+import server.data as data
 import sqlite3
 import json
 
@@ -197,14 +197,14 @@ def graphRoutes(plays):
         plt.plot(preCatchX, preCatchY, 'lightblue', linewidth=0.5)
         plt.plot(postCatchX, postCatchY, 'lightcoral', linewidth=0.5)
     
-    image = mpimg.imread("static/clearField2.png")
+    image = mpimg.imread("server/static/clearField2.png")
     # xydims = [0, 120, 0, 53.3]
     xydims = [-53.3, 0, 0, 120]
     fig = plt.imshow(image, extent=xydims)
     plt.axis('off')
     fig.axes.get_xaxis().set_visible(False)
     fig.axes.get_yaxis().set_visible(False)
-    plt.savefig('static/annotatedField2.png', bbox_inches='tight', pad_inches = 0, dpi=1200, transparent=True)
+    plt.savefig('server/static/annotatedField2.png', bbox_inches='tight', pad_inches = 0, dpi=1200, transparent=True)
     plt.close()
 
     # print("PreSnapXY: (", preSnapX)
@@ -219,11 +219,11 @@ def graphRouteCounts(routeCounts):
     patches, texts = plt.pie(routeCounts.values(), startangle=90)
     plt.legend(patches, labels, loc="center right", bbox_to_anchor=(1.5, 0.5))
     plt.tight_layout()
-    plt.savefig('static/pie.png', bbox_inches='tight', pad_inches = 0, dpi=1200, transparent=True)
+    plt.savefig('server/static/pie.png', bbox_inches='tight', pad_inches = 0, dpi=1200, transparent=True)
     plt.close()
 
 def getPlayerRanks(playerName):
-    with open('ranks.json', 'r') as file:
+    with open('server/ranks.json', 'r') as file:
         data = json.load(file)
     return data[playerName]
 
@@ -276,7 +276,7 @@ def genAllPlayers(): #gets all players who caught a pass during the 2018 season
 
     dbConn.close()
 
-    with open('players.json', 'w') as file:
+    with open('server/players.json', 'w') as file:
         json.dump(players, file, indent=4)
 
     return players
@@ -307,7 +307,7 @@ def genRanks():
 
     dbConn.close()
 
-    with open('ranks.json', 'w') as file:
+    with open('server/ranks.json', 'w') as file:
         json.dump(ranks, file, indent=4)
 
     return ranks

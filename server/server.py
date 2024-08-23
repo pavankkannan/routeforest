@@ -1,5 +1,6 @@
 from flask import Flask, abort, send_from_directory
-import object
+import server.object as object
+from decouple import config
 
 import sqlite3
 import pandas as pd
@@ -39,7 +40,7 @@ app = Flask(__name__)
 
 @app.route('/players')
 def players():
-    with open('players.json', 'r') as file:
+    with open('server/players.json', 'r') as file:
         data = json.load(file)
     return data
 
@@ -66,12 +67,15 @@ def get_object(player_name):
             "recYardsRank": player.RecYardsRank, #tuple (positiional rank, overall rank)
             "tdsRank": player.TDsRank, #tuple (positiional rank, overall rank)
         }
-    except:
-        abort(404)
+    except Exception as e:
+        print(e)
+        raise e
 
-@app.route('/static/images/<filename>')
+@app.route('/static/<path:filename>')
 def serve_image(filename):
-    return send_from_directory('images', filename)
+    return send_from_directory('server/static', filename)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    # app.run(debug=True)
+    app.run(host="0.0.0.0", port=int(config("PORT")), debug=True)
+

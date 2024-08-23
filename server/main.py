@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 import numpy as np
-import object
+import server.object as object
 
 dbConn = sqlite3.connect('nfl_data.db')
 dbCursor = dbConn.cursor()
