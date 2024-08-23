@@ -2,7 +2,6 @@ blinker==1.8.2
 click==8.1.7
 contourpy==1.2.1
 cycler==0.12.1
-decouple==0.0.7
 Flask==3.0.3
 fonttools==4.53.0
 gunicorn==23.0.0
