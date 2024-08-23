@@ -1,1 +1,1 @@
-web: gunicorn --preload --bind 0.0.0.0:$PORT server.server:app
+web: ./combine_database.sh && gunicorn --preload --bind 0.0.0.0:$PORT server.server:app

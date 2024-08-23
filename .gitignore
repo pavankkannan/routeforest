@@ -328,3 +328,4 @@ pyrightconfig.json
 server/nfl-big-data-bowl-2021/**
 server/nfl_data.db
 nfl_data.db
+compressed.db.tgz
