@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
 
+const API_URL = process.env.NODE_ENV === "production" ? "https://routeforest-df1c902bd469.herokuapp.com" : "http://127.0.0.1:8000"
+
 function SearchResultsList({ results, setResults, setInput, setPlayer }) {
 
   const setNewPlayer = (name) => {
@@ -30,7 +32,7 @@ function SearchBar({ setResults, input, setInput }) {
   // [input, setInput] = useState("")
 
   const fetchData = (value) => {
-    fetch("/players")
+    fetch(`${API_URL}/players`)
       .then((response) => response.json())
       .then((json) => {
         const results = json.filter((user) => {
@@ -242,7 +244,7 @@ function PlayerData({ playerName, isLoading, setIsLoading }) {
   const [data, setData] = useState(null)
 
   useEffect(() => {
-    fetch(`/players/${playerName}`)
+    fetch(`${API_URL}/players/${playerName}`)
       .then(
         res => res.json()
       ).then(

@@ -1,12 +1,17 @@
 from flask import Flask, send_from_directory
+from flask_cors import CORS
 import server.object as object
 from decouple import config
 
 import json
 
 # source venv/bin/activate
+# gunicorn server.server:app
 
+# Initialize Flask app and enable CORS.
 app = Flask(__name__)
+allow_list = ["http://localhost:3000", "https://pavankkannan.github.io"]
+cors = CORS(app, resource={"/*": {"origins": allow_list}})
 
 # allPlayers = object.getAllPlayers()
 
