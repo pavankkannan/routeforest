@@ -12,6 +12,7 @@ function SearchResultsList({ results, setResults, setInput, setPlayer }) {
     setResults([])
     // document.getElementById("inputField").innerHTML = "";
   }
+  // console.log({results})
 
   return (
     <div className='SearchResultsList'>
@@ -244,7 +245,7 @@ function PlayerData({ playerName, isLoading, setIsLoading }) {
   const [data, setData] = useState(null)
 
   useEffect(() => {
-    fetch(`${API_URL}/players/${playerName}`)
+    fetch(`${API_URL}/static/players/${playerName.replace("-", "_")}.json`)
       .then(
         res => res.json()
       ).then(
@@ -255,7 +256,7 @@ function PlayerData({ playerName, isLoading, setIsLoading }) {
         }
       )
   }, [playerName, setIsLoading])
-  if (data == null || data.name !== playerName.replace("-", " ")) {
+  if (data == null) {
     return (
       <div className='PlayerData'>
         Loading...

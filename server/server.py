@@ -7,7 +7,7 @@ import json
 
 # source venv/bin/activate
 # gunicorn --bind 0.0.0.0:8000 server.server:app
-# start server
+# start server (IN ROOT FOLDER):
 # flask --app server.server:app run --host 0.0.0.0 --port 8000
 
 # Initialize Flask app and enable CORS.

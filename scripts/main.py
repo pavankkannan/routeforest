@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 import numpy as np
-import server.object as object
+import object
 
 dbConn = sqlite3.connect('nfl_data.db')
 dbCursor = dbConn.cursor()
@@ -45,7 +45,8 @@ dbCursor = dbConn.cursor()
 # ranks = object.getPlayerRanks("Julio Jones")
 # print(ranks['recYards'])
 
-player = object.getPlayerInfo("Larry Fitzgerald")
+# player = object.getPlayerInfo("Larry Fitzgerald")
+player = object.createPlayerJson("Tarik Cohen")
 # print(player.RoutePercentages)
 
 

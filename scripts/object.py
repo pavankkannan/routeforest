@@ -1,4 +1,4 @@
-import server.data as data
+import data
 import sqlite3
 import json
 import time
@@ -13,74 +13,23 @@ from collections import Counter
 
 class Player:
     def __init__(self, name, number, team, position, totYards, totAirYards, totYAC, totReceptions, totTargets, totTDs, routeTree, routePercentages, headshot, college, recsRank, recYardsRank, tdsRank):
-        self._Name = name
-        self._Number = number
-        self._Team = team
-        self._Position = position
-        self._TotYards = totYards
-        self._TotAirYards = totAirYards
-        self._TotYAC = totYAC
-        self._TotReceptions = totReceptions
-        self._TotTargets = totTargets
-        self._TotTDs = totTDs
-        self._RouteTree = routeTree
-        self._RoutePercentages = routePercentages
-        self._Headshot = headshot
-        self._College = college
-        self._RecsRank = recsRank
-        self._RecYardsRank = recYardsRank
-        self._TDsRank = tdsRank
-    @property
-    def Name(self):
-        return self._Name
-    @property
-    def Number(self):
-        return self._Number
-    @property
-    def Team(self):
-        return self._Team
-    @property
-    def Position(self):
-        return self._Position
-    @property
-    def TotYards(self):
-        return self._TotYards
-    @property
-    def TotAirYards(self):
-        return self._TotAirYards
-    @property
-    def TotYAC(self):
-        return self._TotYAC
-    @property
-    def TotReceptions(self):
-        return self._TotReceptions
-    @property
-    def TotTargets(self):
-        return self._TotTargets
-    @property
-    def TotTDs(self):
-        return self._TotTDs
-    @property
-    def RouteTree(self):
-        return self._RouteTree
-    @property
-    def RoutePercentages(self):
-        return self._RoutePercentages
-    @property
-    def Headshot(self):
-        return self._Headshot
-    @property
-    def College(self):
-        return self._College
-    @property
-    def RecsRank(self):
-        return self._RecsRank
-    @property
-    def RecYardsRank(self):
-        return self._RecYardsRank
-    @property
-    def TDsRank(self):
-        return self._TDsRank
+        self.name = name
+        self.number = number
+        self.team = team
+        self.position = position
+        self.totYards = totYards
+        self.totAirYards = totAirYards
+        self.totYAC = totYAC
+        self.totReceptions = totReceptions
+        self.totTargets = totTargets
+        self.totTDs = totTDs
+        self.routeTree = routeTree
+        self.routePercentages = routePercentages
+        self.headshot = headshot
+        self.college = college
+        self.recsRank = recsRank
+        self.recYardsRank = recYardsRank
+        self.tdsRank = tdsRank
     def toJSON(self):
         return json.dumps(
             self,
@@ -90,41 +39,17 @@ class Player:
 
 class Route:
     def __init__(self, preSnap, preCatch, postCatch, routeType):
-        self._PreSnap = preSnap
-        self._PreCatch = preCatch
-        self._PostCatch = postCatch
-        self._RouteType = routeType
-    @property
-    def PreSnap(self): # List of Route point tuples before ball snap
-        return self._PreSnap
-    @property
-    def PreCatch(self): # List of Route point tuples after ball snap before ball caught
-        return self._PreCatch
-    @property
-    def PostCatch(self): # List of Route points after ball caught until end of data
-        return self._PostCatch
-    @property
-    def RouteType(self): # Type of route run - hitch, out, in, etc...
-        return self._RouteType
+        self.preSnap = preSnap
+        self.preCatch = preCatch
+        self.postCatch = postCatch
+        self.routeType = routeType
 
 class RoutePoint:
     def __init__(self, xy, event, frame, time):
-        self._XY = xy 
-        self._Event = event
-        self._Frame = frame
-        self._Time = time
-    @property
-    def XY(self): # coordinate tuple (x,y)
-        return self._XY
-    @property
-    def Event(self): # ball snap, ball caught, out of bounds, etc...
-        return self._Event
-    @property
-    def Frame(self): # 1,2,3, etc...
-        return self._Frame
-    @property
-    def Time(self):
-        return self._Time
+        self.xy = xy 
+        self.event = event
+        self.frame = frame
+        self.time = time
     
 
 def getRoute(dbConn, playerName, playID, tableName): ## given a play name, player id and week number, returns a single route a player ran
@@ -155,9 +80,9 @@ def getRoute(dbConn, playerName, playID, tableName): ## given a play name, playe
 
     routeSection = 0
     for point in rawRoute:
-        if point.Event == "ball_snap":
+        if point.event == "ball_snap":
             routeSection = 1
-        elif point.Event == "pass_outcome_caught":
+        elif point.event == "pass_outcome_caught":
             routeSection = 2
         (splitRoute[routeSection]).append(point)
 
@@ -191,9 +116,9 @@ def graphRoutes(plays):
         return [-y_i for y_i in y], x
 
     for play in plays:
-        (preSnapX, preSnapY) = rotate([cords.XY[0] for cords in play.PreSnap], [cords.XY[1] for cords in play.PreSnap])
-        (preCatchX, preCatchY) = rotate([cords.XY[0] for cords in play.PreCatch], [cords.XY[1] for cords in play.PreCatch]) 
-        (postCatchX, postCatchY) = rotate([cords.XY[0] for cords in play.PostCatch], [cords.XY[1] for cords in play.PostCatch]) 
+        (preSnapX, preSnapY) = rotate([cords.xy[0] for cords in play.preSnap], [cords.xy[1] for cords in play.preSnap])
+        (preCatchX, preCatchY) = rotate([cords.xy[0] for cords in play.preCatch], [cords.xy[1] for cords in play.preCatch]) 
+        (postCatchX, postCatchY) = rotate([cords.xy[0] for cords in play.postCatch], [cords.xy[1] for cords in play.postCatch]) 
 
 
         if postCatchX:
@@ -249,11 +174,11 @@ def getPlayerInfo(playerName): # Returns basic player info, team, jeresey num, r
     start = time.time()
     routes = getCatchesByPlayer(dbConn, result[0])
     end = time.time()
-    print(f"getCatchesByPlayer: {end - start}")
+    # print(f"getCatchesByPlayer: {end - start}")
 
     dbConn.close()
 
-    routeCounts = Counter(route.RouteType for route in routes)
+    routeCounts = Counter(route.routeType for route in routes)
 
     ranks = getPlayerRanks(result[0])
 
@@ -323,7 +248,7 @@ def genRanks():
     return ranks
 
 def createPlayerJson(playerName):
-    filename = playerName.replace(" ", "_") + ".json"
+    filename = "server/static/players/" + playerName.replace(" ", "_") + ".json"
     try:
         with open(filename, 'w') as json_file:
             jsonString = getPlayerInfo(playerName).toJSON()
