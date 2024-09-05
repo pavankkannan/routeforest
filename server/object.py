@@ -216,6 +216,41 @@ def graphRoutes(plays):
 
     # print("PreSnapXY: (", preSnapX)
 
+def graphRoutes2(playerName):
+
+    def rotate(x, y):
+        return [-y_i for y_i in y], x
+
+    filename = 'server/static/players/' + playerName + '.json'
+    with open(filename, 'r') as file:
+        player_data = json.load(file)
+
+    plays = player_data.get("routeTree")
+
+    for play in plays:
+        (preSnapX, preSnapY) = rotate([cords.xy[0] for cords in play.preSnap], [cords.xy[1] for cords in play.preSnap])
+        (preCatchX, preCatchY) = rotate([cords.xy[0] for cords in play.preCatch], [cords.xy[1] for cords in play.preCatch]) 
+        (postCatchX, postCatchY) = rotate([cords.xy[0] for cords in play.postCatch], [cords.xy[1] for cords in play.postCatch]) 
+
+
+        if postCatchX:
+            preCatchX.append(postCatchX[0])
+            preCatchY.append(postCatchY[0])
+
+        plt.plot(preSnapX, preSnapY, linestyle='dotted',  color='lightblue', linewidth=0.5)
+        plt.plot(preCatchX, preCatchY, 'lightblue', linewidth=0.5)
+        plt.plot(postCatchX, postCatchY, 'lightcoral', linewidth=0.5)
+    
+    image = mpimg.imread("server/static/clearField2.png")
+    # xydims = [0, 120, 0, 53.3]
+    xydims = [-53.3, 0, 0, 120]
+    fig = plt.imshow(image, extent=xydims)
+    plt.axis('off')
+    fig.axes.get_xaxis().set_visible(False)
+    fig.axes.get_yaxis().set_visible(False)
+    plt.savefig('server/static/annotatedField2.png', bbox_inches='tight', pad_inches = 0, dpi=1200, transparent=True)
+    plt.close()
+
 
 
 def graphRouteCounts(routeCounts):

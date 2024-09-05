@@ -153,7 +153,9 @@ function RecYards({ data }) {
   
   return (
     <div className='RecYards'>
-      <p><span style={{color: 'lightblue', fontWeight: "bold"}}>Air Yards</span> vs <span style={{color: "lightcoral", fontWeight: "bold"}}>Yards After Catch</span></p>
+      <p style={{textAlign: 'center', marginBottom: '10px', fontSize: '18px', color: '#44C37D', fontWeight: "bold"}}>
+        <span style={{color: 'lightblue', fontWeight: "bold"}}>Air Yards</span> vs <span style={{color: "lightcoral", fontWeight: "bold"}}>Yards After Catch</span>
+      </p>
       <div className='recYardsLabel'>
         <div>
           <p>{airYdPercent}%</p>
@@ -229,10 +231,10 @@ function CatchStatistics({ data }) {
       </div>
       {mode === "charts" && 
         <div>
-          <RecYards data={data}/>
+          <div className='charts'>
+            <RecYards data={data}/>
           {/* <img src={`${API_URL}/static/pie.png?t=${Date.now()}`} className="pie" alt='pie'/> */}
-          <div className='Chart'>
-            <Chart routePercentages={data.routePercentages}/>
+            <Chart routePercentages={data.routePercentages} totRec={data.totReceptions}/>
           </div>
         </div>
       }
@@ -247,6 +249,8 @@ function CatchStatistics({ data }) {
 
 function PlayerData({ playerName, isLoading, setIsLoading }) {
   const [data, setData] = useState(null)
+
+  // fetch(`${API_URL}/players/${playerName}`)
 
   useEffect(() => {
     fetch(`${API_URL}/static/players/${playerName}.json`)

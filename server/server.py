@@ -25,27 +25,28 @@ def players():
 
 @app.route('/players/<player_name>')
 def get_object(player_name):
-    playerName = player_name.replace("_", " ")
     try:
-        player = object.getPlayerInfo(playerName)
-        return {
-            "name": player.Name,
-            "number": int(player.Number),
-            "team": player.Team,
-            "position": player.Position,
-            "totYards": player.TotYards,
-            "totAirYards":player.TotAirYards,
-            "totYAC": player.TotYAC,
-            "totReceptions": player.TotReceptions,
-            "totTargets": player.TotTargets,
-            "totTDs": player.TotTDs,
-            "routePercentages": player.RoutePercentages,
-            "headshot": player.Headshot,
-            "college": player.College,
-            "recsRank": player.RecsRank, #tuple (positiional rank, overall rank)
-            "recYardsRank": player.RecYardsRank, #tuple (positiional rank, overall rank)
-            "tdsRank": player.TDsRank, #tuple (positiional rank, overall rank)
-        }
+        # player = object.getPlayerInfo(playerName)
+        object.graphRoutes2(player_name)
+        return '', 204
+        #return {
+            # "name": player.Name,
+            # "number": int(player.Number),
+            # "team": player.Team,
+            # "position": player.Position,
+            # "totYards": player.TotYards,
+            # "totAirYards":player.TotAirYards,
+            # "totYAC": player.TotYAC,
+            # "totReceptions": player.TotReceptions,
+            # "totTargets": player.TotTargets,
+            # "totTDs": player.TotTDs,
+            # "routePercentages": player.RoutePercentages,
+            # "headshot": player.Headshot,
+            # "college": player.College,
+            # "recsRank": player.RecsRank, #tuple (positiional rank, overall rank)
+            # "recYardsRank": player.RecYardsRank, #tuple (positiional rank, overall rank)
+            # "tdsRank": player.TDsRank, #tuple (positiional rank, overall rank)
+        # }
     except Exception as e:
         print(e)
         raise e

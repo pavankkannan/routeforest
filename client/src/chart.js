@@ -1,6 +1,8 @@
-import { PieChart, Pie, Legend, ResponsiveContainer, Cell } from 'recharts';
+import { useState } from 'react';
+import { PieChart, Pie, Legend, Label, ResponsiveContainer, Cell } from 'recharts';
 
-export default function Chart({ routePercentages }) {
+export default function Chart({ routePercentages, totRec }) {
+  const [clickedCell, setClickedCell] = useState("Click on a Cell");
 
   const data = Object.entries(routePercentages).map(([name, value]) => ({
     name,
@@ -24,17 +26,24 @@ export default function Chart({ routePercentages }) {
     "OTHER": 'white'
   }
 
-  // const label = ({ name, value }) => `${name}: ${value}`;
+  const handleCellClick = (entry) => {
+    setClickedCell(`${entry.name}: ${entry.value} catches (${Math.round((entry.value/totRec) * 100)}%)`);
+  };
 
+  // const label = ({ name, value }) => `${name}: ${value}`;
   return (
-    <ResponsiveContainer width="100%" height={300}>
+    <ResponsiveContainer width="100%" height={400}>
+      <p
+        style={{color: '#44C37D', fontSize: '18px', textAlign: 'center', marginTop: '40px', marginBottom: '-45px', fontWeight: 'bold'}}
+      >
+      Route Tree Breakdown</p>
       <PieChart>
         <Pie
           dataKey="value"
           isAnimationActive={false}
           data={data}
-          innerRadius={40}
-          outerRadius={100}
+          innerRadius={80}
+          outerRadius={140}
           // fill="#44C37D"
           // label={label}
           legendType='square'
@@ -42,11 +51,16 @@ export default function Chart({ routePercentages }) {
           strokeWidth={2}
         >
           {data.map((entry, index) => (
-            <Cell key={`cell-${index}`} fill={colors[entry.name] || 'blue'} />
+            <Cell key={`cell-${index}`} fill={colors[entry.name] || 'blue'} style={{outline: 'none'}} onClick={() => handleCellClick(entry)}/>
           ))}
+          <Label 
+            value={clickedCell} 
+            position="center" 
+            style={{ fontSize: '14px', fill: 'white', fontWeight: 'bold' }} 
+          />
         </Pie>
 
-        <Legend verticalAlign="top" height={36}/>
+        {/* <Legend verticalAlign="top" height={36}/> */}
       </PieChart>
       
 
