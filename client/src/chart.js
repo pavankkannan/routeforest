@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { PieChart, Pie, Legend, Label, ResponsiveContainer, Cell } from 'recharts';
+import { PieChart, Pie, Label, ResponsiveContainer, Cell } from 'recharts';
 
 export default function Chart({ routePercentages, totRec }) {
   const [clickedCell, setClickedCell] = useState("Click on a Cell");
