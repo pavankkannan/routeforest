@@ -24,7 +24,7 @@ export default function Chart({ routePercentages }) {
     "OTHER": 'white'
   }
 
-  const label = ({ name, value }) => `${name}: ${value}`;
+  // const label = ({ name, value }) => `${name}: ${value}`;
 
   return (
     <ResponsiveContainer width="100%" height={300}>
