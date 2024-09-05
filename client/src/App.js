@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
+import Chart from "./chart";
 
 const API_URL = process.env.NODE_ENV === "production" ? "https://routeforest-df1c902bd469.herokuapp.com" : "http://127.0.0.1:8000"
 
 function SearchResultsList({ results, setResults, setInput, setPlayer }) {
 
   const setNewPlayer = (name) => {
-    setPlayer(name.replace(" ", "-"))
+    setPlayer(name.replace(" ", "_"))
     console.log(name)
     setInput("")
     setResults([])
@@ -229,7 +230,10 @@ function CatchStatistics({ data }) {
       {mode === "charts" && 
         <div>
           <RecYards data={data}/>
-          <img src={`${API_URL}/static/pie.png?t=${Date.now()}`} className="pie" alt='pie'/>
+          {/* <img src={`${API_URL}/static/pie.png?t=${Date.now()}`} className="pie" alt='pie'/> */}
+          <div className='Chart'>
+            <Chart routePercentages={data.routePercentages}/>
+          </div>
         </div>
       }
       {mode === "field" && 
@@ -245,7 +249,7 @@ function PlayerData({ playerName, isLoading, setIsLoading }) {
   const [data, setData] = useState(null)
 
   useEffect(() => {
-    fetch(`${API_URL}/static/players/${playerName.replace("-", "_")}.json`)
+    fetch(`${API_URL}/static/players/${playerName}.json`)
       .then(
         res => res.json()
       ).then(
@@ -275,7 +279,7 @@ function PlayerData({ playerName, isLoading, setIsLoading }) {
 
 
 function App() {
-  const [player, setPlayer] = useState("Julio-Jones")
+  const [player, setPlayer] = useState("Julio_Jones")
   const [results, setResults] = useState([])
   const [input, setInput] = useState("")
   const [isLoading, setIsLoading] = useState("true")

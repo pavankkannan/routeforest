@@ -46,7 +46,7 @@ dbCursor = dbConn.cursor()
 # print(ranks['recYards'])
 
 # player = object.getPlayerInfo("Larry Fitzgerald")
-player = object.createPlayerJson("Tarik Cohen")
+player = object.createPlayerJson("Rob Gronkowski")
 # print(player.RoutePercentages)
 
 

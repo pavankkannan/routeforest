@@ -25,7 +25,7 @@ def players():
 
 @app.route('/players/<player_name>')
 def get_object(player_name):
-    playerName = player_name.replace("-", " ")
+    playerName = player_name.replace("_", " ")
     try:
         player = object.getPlayerInfo(playerName)
         return {
