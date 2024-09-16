@@ -23,30 +23,13 @@ def players():
         data = json.load(file)
     return data
 
-@app.route('/players/<player_name>')
-def get_object(player_name):
+@app.route('/players/fieldView/<player_name>')
+def get_fieldView(player_name):
     try:
         # player = object.getPlayerInfo(playerName)
         object.graphRoutes2(player_name)
-        return '', 204
-        #return {
-            # "name": player.Name,
-            # "number": int(player.Number),
-            # "team": player.Team,
-            # "position": player.Position,
-            # "totYards": player.TotYards,
-            # "totAirYards":player.TotAirYards,
-            # "totYAC": player.TotYAC,
-            # "totReceptions": player.TotReceptions,
-            # "totTargets": player.TotTargets,
-            # "totTDs": player.TotTDs,
-            # "routePercentages": player.RoutePercentages,
-            # "headshot": player.Headshot,
-            # "college": player.College,
-            # "recsRank": player.RecsRank, #tuple (positiional rank, overall rank)
-            # "recYardsRank": player.RecYardsRank, #tuple (positiional rank, overall rank)
-            # "tdsRank": player.TDsRank, #tuple (positiional rank, overall rank)
-        # }
+        return send_from_directory('static/fieldViews', f'{player_name}_FV.png')
+    
     except Exception as e:
         print(e)
         raise e

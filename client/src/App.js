@@ -8,7 +8,7 @@ function SearchResultsList({ results, setResults, setInput, setPlayer }) {
 
   const setNewPlayer = (name) => {
     setPlayer(name.replace(" ", "_"))
-    console.log(name)
+    // console.log(name)
     setInput("")
     setResults([])
     // document.getElementById("inputField").innerHTML = "";
@@ -240,7 +240,7 @@ function CatchStatistics({ data }) {
       }
       {mode === "field" && 
         <div>
-          <img src={`${API_URL}/static/annotatedField2.png?t=${Date.now()}`} className="field" alt='field'/>
+          <img src={`${API_URL}/players/fieldView/${data.name.replace(" ", "_")}`} className="field" alt='field' key={data.name}/>
         </div>
       }
     </div>
@@ -251,6 +251,7 @@ function PlayerData({ playerName, isLoading, setIsLoading }) {
   const [data, setData] = useState(null)
 
   // fetch(`${API_URL}/players/${playerName}`)
+  // console.log(playerName)
 
   useEffect(() => {
     fetch(`${API_URL}/static/players/${playerName}.json`)
@@ -259,6 +260,7 @@ function PlayerData({ playerName, isLoading, setIsLoading }) {
       ).then(
         data => {
           setData(data)
+          // fetch(`${API_URL}/players/${playerName}`)
           setIsLoading("false")
           // console.log(data)
         }

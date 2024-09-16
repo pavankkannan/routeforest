@@ -110,53 +110,31 @@ def getCatchesByPlayer(dbConn, playerName): #Given a player name, returns a list
 
     return catches
 
-def graphRoutes(plays):
-
-    def rotate(x, y):
-        return [-y_i for y_i in y], x
-
-    for play in plays:
-        (preSnapX, preSnapY) = rotate([cords.xy[0] for cords in play.preSnap], [cords.xy[1] for cords in play.preSnap])
-        (preCatchX, preCatchY) = rotate([cords.xy[0] for cords in play.preCatch], [cords.xy[1] for cords in play.preCatch]) 
-        (postCatchX, postCatchY) = rotate([cords.xy[0] for cords in play.postCatch], [cords.xy[1] for cords in play.postCatch]) 
-
-
-        if postCatchX:
-            preCatchX.append(postCatchX[0])
-            preCatchY.append(postCatchY[0])
-
-        plt.plot(preSnapX, preSnapY, linestyle='dotted',  color='lightblue', linewidth=0.5)
-        plt.plot(preCatchX, preCatchY, 'lightblue', linewidth=0.5)
-        plt.plot(postCatchX, postCatchY, 'lightcoral', linewidth=0.5)
-    
-    image = mpimg.imread("server/static/clearField2.png")
-    # xydims = [0, 120, 0, 53.3]
-    xydims = [-53.3, 0, 0, 120]
-    fig = plt.imshow(image, extent=xydims)
-    plt.axis('off')
-    fig.axes.get_xaxis().set_visible(False)
-    fig.axes.get_yaxis().set_visible(False)
-    plt.savefig('server/static/annotatedField2.png', bbox_inches='tight', pad_inches = 0, dpi=1200, transparent=True)
-    plt.close()
-
-    # print("PreSnapXY: (", preSnapX)
 def graphRoutes2(playerName):
 
     def rotate(x, y):
         return [-y_i for y_i in y], x
-
-    filename = "server/static/players/" + playerName
+    
+    filename = 'server/static/players/' + playerName + '.json'
     with open(filename, 'r') as file:
         player_data = json.load(file)
 
-    # Return the requested attribute
-
-    plays = player_data.get("routeTree")
+    plays = player_data.get('routeTree')
 
     for play in plays:
-        (preSnapX, preSnapY) = rotate([cords.xy[0] for cords in play.preSnap], [cords.xy[1] for cords in play.preSnap])
-        (preCatchX, preCatchY) = rotate([cords.xy[0] for cords in play.preCatch], [cords.xy[1] for cords in play.preCatch]) 
-        (postCatchX, postCatchY) = rotate([cords.xy[0] for cords in play.postCatch], [cords.xy[1] for cords in play.postCatch]) 
+
+        preSnapX, preSnapY = rotate(
+            [cords['xy'][0] for cords in play['preSnap'] if 'xy' in cords], 
+            [cords['xy'][1] for cords in play['preSnap'] if 'xy' in cords]
+        )
+        preCatchX, preCatchY = rotate(
+            [cords['xy'][0] for cords in play['preCatch'] if 'xy' in cords], 
+            [cords['xy'][1] for cords in play['preCatch'] if 'xy' in cords]
+        )
+        postCatchX, postCatchY = rotate(
+            [cords['xy'][0] for cords in play['postCatch'] if 'xy' in cords], 
+            [cords['xy'][1] for cords in play['postCatch'] if 'xy' in cords]
+        )
 
 
         if postCatchX:
@@ -174,8 +152,9 @@ def graphRoutes2(playerName):
     plt.axis('off')
     fig.axes.get_xaxis().set_visible(False)
     fig.axes.get_yaxis().set_visible(False)
-    plt.savefig('server/static/annotatedField2.png', bbox_inches='tight', pad_inches = 0, dpi=1200, transparent=True)
+    plt.savefig(f'server/static/fieldViews/{playerName}_FV.png', bbox_inches='tight', pad_inches = 0, dpi=1200, transparent=True)
     plt.close()
+
 
 
 def graphRouteCounts(routeCounts):
@@ -221,7 +200,7 @@ def getPlayerInfo(playerName): # Returns basic player info, team, jeresey num, r
     player = Player(result[0], result[1], result[2], result[3], result[4], (result[4]-result[5]), result[5], result[6], result[7], result[8], routes, routeCounts, result[9], result[10], ranks['recs'], ranks['recYards'], ranks['tds'])
 
 
-    graphRoutes(routes)
+    # graphRoutes(routes)
     graphRouteCounts(routeCounts)
 
     return player
@@ -290,5 +269,17 @@ def createPlayerJson(playerName):
             jsonString = getPlayerInfo(playerName).toJSON()
             json_file.write(jsonString)
         print(f"Object successfully saved to {filename}")
+        graphRoutes2(playerName.replace(" ", "_"))
     except Exception as error:
         print(f"Failed to save object to JSON file: {error}")
+
+def createPlayerJsons():
+    filename = 'server/players.json'
+    with open(filename, 'r') as file:
+        data = json.load(file)
+    
+    i = 0
+    for player in data:
+        if i < 20:
+            createPlayerJson(player['name'])
+            i += 1 

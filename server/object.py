@@ -220,17 +220,27 @@ def graphRoutes2(playerName):
 
     def rotate(x, y):
         return [-y_i for y_i in y], x
-
+    
     filename = 'server/static/players/' + playerName + '.json'
     with open(filename, 'r') as file:
         player_data = json.load(file)
 
-    plays = player_data.get("routeTree")
+    plays = player_data.get('routeTree')
 
     for play in plays:
-        (preSnapX, preSnapY) = rotate([cords.xy[0] for cords in play.preSnap], [cords.xy[1] for cords in play.preSnap])
-        (preCatchX, preCatchY) = rotate([cords.xy[0] for cords in play.preCatch], [cords.xy[1] for cords in play.preCatch]) 
-        (postCatchX, postCatchY) = rotate([cords.xy[0] for cords in play.postCatch], [cords.xy[1] for cords in play.postCatch]) 
+
+        preSnapX, preSnapY = rotate(
+            [cords['xy'][0] for cords in play['preSnap'] if 'xy' in cords], 
+            [cords['xy'][1] for cords in play['preSnap'] if 'xy' in cords]
+        )
+        preCatchX, preCatchY = rotate(
+            [cords['xy'][0] for cords in play['preCatch'] if 'xy' in cords], 
+            [cords['xy'][1] for cords in play['preCatch'] if 'xy' in cords]
+        )
+        postCatchX, postCatchY = rotate(
+            [cords['xy'][0] for cords in play['postCatch'] if 'xy' in cords], 
+            [cords['xy'][1] for cords in play['postCatch'] if 'xy' in cords]
+        )
 
 
         if postCatchX:
@@ -248,7 +258,7 @@ def graphRoutes2(playerName):
     plt.axis('off')
     fig.axes.get_xaxis().set_visible(False)
     fig.axes.get_yaxis().set_visible(False)
-    plt.savefig('server/static/annotatedField2.png', bbox_inches='tight', pad_inches = 0, dpi=1200, transparent=True)
+    plt.savefig(f'server/static/fieldViews/{playerName}_FV.png', bbox_inches='tight', pad_inches = 0, dpi=1200, transparent=True)
     plt.close()
 
 

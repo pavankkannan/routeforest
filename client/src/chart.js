@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { PieChart, Pie, Label, ResponsiveContainer, Cell } from 'recharts';
 
 export default function Chart({ routePercentages, totRec }) {
-  const [clickedCell, setClickedCell] = useState("Click on a Cell");
+  const [clickedCell, setClickedCell] = useState(["Click on a cell"]);
 
   const data = Object.entries(routePercentages).map(([name, value]) => ({
     name,
@@ -27,7 +27,7 @@ export default function Chart({ routePercentages, totRec }) {
   }
 
   const handleCellClick = (entry) => {
-    setClickedCell(`${entry.name}: ${entry.value} catches (${Math.round((entry.value/totRec) * 100)}%)`);
+    setClickedCell([`${entry.name}:`, `${entry.value} catches (${((entry.value/totRec) * 100).toFixed(1)}%)`]);
   };
 
   // const label = ({ name, value }) => `${name}: ${value}`;
@@ -58,6 +58,11 @@ export default function Chart({ routePercentages, totRec }) {
             position="center" 
             style={{ fontSize: '14px', fill: 'white', fontWeight: 'bold' }} 
           />
+          {/* <Label 
+            value={"hi"} 
+            position="center" 
+            style={{ fontSize: '14px', fill: 'white', fontWeight: 'bold' }} 
+          /> */}
         </Pie>
 
         {/* <Legend verticalAlign="top" height={36}/> */}
