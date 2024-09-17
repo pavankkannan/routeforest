@@ -277,9 +277,8 @@ def createPlayerJsons():
     filename = 'server/players.json'
     with open(filename, 'r') as file:
         data = json.load(file)
-    
     i = 0
     for player in data:
-        if i < 20:
-            createPlayerJson(player['name'])
-            i += 1 
+        createPlayerJson(player['name'])
+        i += 1 
+        print(f'{i} done')

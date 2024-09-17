@@ -1,0 +1,37 @@
+{
+    "college": "Wyoming",
+    "headshot": "https://static.www.nfl.com/image/private/f_auto,q_auto/league/ypgn9r59rqqev6qv45ns",
+    "name": "Brian Hill",
+    "number": 32.0,
+    "position": "RB",
+    "recYardsRank": [
+        127,
+        440
+    ],
+    "recsRank": [
+        131,
+        431
+    ],
+    "routePercentages": {
+        "OTHER": 1
+    },
+    "routeTree": [
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        }
+    ],
+    "tdsRank": [
+        62,
+        294
+    ],
+    "team": "ATL",
+    "totAirYards": 4.0,
+    "totReceptions": 1.0,
+    "totTDs": 0.0,
+    "totTargets": 2,
+    "totYAC": 5.0,
+    "totYards": 9.0
+}

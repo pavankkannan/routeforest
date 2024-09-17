@@ -1,0 +1,241 @@
+{
+    "college": "North Carolina",
+    "headshot": "https://static.www.nfl.com/image/private/f_auto,q_auto/league/cubg2wczhxrtz6jd4ldj",
+    "name": "Giovani Bernard",
+    "number": 25.0,
+    "position": "RB",
+    "recYardsRank": [
+        33,
+        188
+    ],
+    "recsRank": [
+        24,
+        114
+    ],
+    "routePercentages": {
+        "OTHER": 35
+    },
+    "routeTree": [
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        },
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        },
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        },
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        },
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        },
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        },
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        },
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        },
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        },
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        },
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        },
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        },
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        },
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        },
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        },
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        },
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        },
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        },
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        },
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        },
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        },
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        },
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        },
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        },
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        },
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        },
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        },
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        },
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        },
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        },
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        },
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        },
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        },
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        },
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        }
+    ],
+    "tdsRank": [
+        62,
+        294
+    ],
+    "team": "CIN",
+    "totAirYards": -9.0,
+    "totReceptions": 35.0,
+    "totTDs": 0.0,
+    "totTargets": 49,
+    "totYAC": 227.0,
+    "totYards": 218.0
+}

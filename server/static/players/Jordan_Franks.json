@@ -1,0 +1,43 @@
+{
+    "college": "Central Florida",
+    "headshot": "https://static.www.nfl.com/image/private/f_auto,q_auto/league/aulv75f9irdxvu6wp9rf",
+    "name": "Jordan Franks",
+    "number": 88.0,
+    "position": "RB",
+    "recYardsRank": [
+        96,
+        372
+    ],
+    "recsRank": [
+        118,
+        404
+    ],
+    "routePercentages": {
+        "OTHER": 2
+    },
+    "routeTree": [
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        },
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        }
+    ],
+    "tdsRank": [
+        62,
+        294
+    ],
+    "team": "CIN",
+    "totAirYards": 23.0,
+    "totReceptions": 2.0,
+    "totTDs": 0.0,
+    "totTargets": 3,
+    "totYAC": 14.0,
+    "totYards": 37.0
+}

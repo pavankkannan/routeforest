@@ -1,0 +1,37 @@
+{
+    "college": "Miami (Fla.)",
+    "headshot": "https://static.www.nfl.com/image/private/f_auto,q_auto/league/kxj01aeqfoi8cuexcnr0",
+    "name": "Sam Shields",
+    "number": 37.0,
+    "position": "DB",
+    "recYardsRank": [
+        2,
+        432
+    ],
+    "recsRank": [
+        1,
+        431
+    ],
+    "routePercentages": {
+        "OTHER": 1
+    },
+    "routeTree": [
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        }
+    ],
+    "tdsRank": [
+        2,
+        294
+    ],
+    "team": "LA",
+    "totAirYards": 6.0,
+    "totReceptions": 1.0,
+    "totTDs": 0.0,
+    "totTargets": 1,
+    "totYAC": 6.0,
+    "totYards": 12.0
+}

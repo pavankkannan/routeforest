@@ -1,0 +1,37 @@
+{
+    "college": "Central Michigan",
+    "headshot": "https://static.www.nfl.com/image/private/f_auto,q_auto/league/vzmoz5duiuoocv4qnyhl",
+    "name": "Joe Staley",
+    "number": 74.0,
+    "position": "OL",
+    "recYardsRank": [
+        8,
+        491
+    ],
+    "recsRank": [
+        1,
+        431
+    ],
+    "routePercentages": {
+        "OTHER": 1
+    },
+    "routeTree": [
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        }
+    ],
+    "tdsRank": [
+        5,
+        294
+    ],
+    "team": "SF",
+    "totAirYards": -10.0,
+    "totReceptions": 1.0,
+    "totTDs": 0.0,
+    "totTargets": 1,
+    "totYAC": 5.0,
+    "totYards": -5.0
+}

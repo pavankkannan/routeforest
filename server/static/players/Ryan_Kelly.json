@@ -1,0 +1,37 @@
+{
+    "college": "Alabama",
+    "headshot": "https://static.www.nfl.com/image/private/f_auto,q_auto/league/ae15e4xbfvfd5avepljm",
+    "name": "Ryan Kelly",
+    "number": 78.0,
+    "position": "OL",
+    "recYardsRank": [
+        7,
+        490
+    ],
+    "recsRank": [
+        1,
+        431
+    ],
+    "routePercentages": {
+        "OTHER": 1
+    },
+    "routeTree": [
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        }
+    ],
+    "tdsRank": [
+        5,
+        294
+    ],
+    "team": "IND",
+    "totAirYards": -3.0,
+    "totReceptions": 1.0,
+    "totTDs": 0.0,
+    "totTargets": 1,
+    "totYAC": -1.0,
+    "totYards": -4.0
+}

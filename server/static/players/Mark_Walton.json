@@ -1,0 +1,61 @@
+{
+    "college": "Miami (Fla.)",
+    "headshot": "https://static.www.nfl.com/image/private/f_auto,q_auto/league/bagm3hmxx07fqbe2xumb",
+    "name": "Mark Walton",
+    "number": 32.0,
+    "position": "RB",
+    "recYardsRank": [
+        92,
+        362
+    ],
+    "recsRank": [
+        96,
+        343
+    ],
+    "routePercentages": {
+        "OTHER": 5
+    },
+    "routeTree": [
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        },
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        },
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        },
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        },
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        }
+    ],
+    "tdsRank": [
+        62,
+        294
+    ],
+    "team": "CIN",
+    "totAirYards": -7.0,
+    "totReceptions": 5.0,
+    "totTDs": 0.0,
+    "totTargets": 8,
+    "totYAC": 48.0,
+    "totYards": 41.0
+}

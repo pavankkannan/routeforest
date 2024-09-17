@@ -1,0 +1,37 @@
+{
+    "college": "Louisiana State",
+    "headshot": "https://static.www.nfl.com/image/private/f_auto,q_auto/league/az6qa28sbmxfklqs9waz",
+    "name": "Kyle Williams",
+    "number": 95.0,
+    "position": "DL",
+    "recYardsRank": [
+        1,
+        440
+    ],
+    "recsRank": [
+        1,
+        431
+    ],
+    "routePercentages": {
+        "OTHER": 1
+    },
+    "routeTree": [
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        }
+    ],
+    "tdsRank": [
+        1,
+        294
+    ],
+    "team": "BUF",
+    "totAirYards": -1.0,
+    "totReceptions": 1.0,
+    "totTDs": 0.0,
+    "totTargets": 1,
+    "totYAC": 10.0,
+    "totYards": 9.0
+}

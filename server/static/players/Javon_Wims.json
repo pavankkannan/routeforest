@@ -1,0 +1,55 @@
+{
+    "college": "Georgia",
+    "headshot": "https://static.www.nfl.com/image/private/f_auto,q_auto/league/gxvlkysyikrebxul55re",
+    "name": "Javon Wims",
+    "number": 83.0,
+    "position": "WR",
+    "recYardsRank": [
+        179,
+        385
+    ],
+    "recsRank": [
+        169,
+        364
+    ],
+    "routePercentages": {
+        "OTHER": 4
+    },
+    "routeTree": [
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        },
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        },
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        },
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        }
+    ],
+    "tdsRank": [
+        150,
+        294
+    ],
+    "team": "CHI",
+    "totAirYards": 30.0,
+    "totReceptions": 4.0,
+    "totTDs": 0.0,
+    "totTargets": 5,
+    "totYAC": 2.0,
+    "totYards": 32.0
+}

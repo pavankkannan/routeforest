@@ -1,0 +1,37 @@
+{
+    "college": "Ohio State",
+    "headshot": "https://static.www.nfl.com/image/private/f_auto,q_auto/league/gpzxp4f4jmncgce5pwjv",
+    "name": "Taylor Decker",
+    "number": 68.0,
+    "position": "OL",
+    "recYardsRank": [
+        1,
+        435
+    ],
+    "recsRank": [
+        1,
+        431
+    ],
+    "routePercentages": {
+        "OTHER": 1
+    },
+    "routeTree": [
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        }
+    ],
+    "tdsRank": [
+        1,
+        184
+    ],
+    "team": "DET",
+    "totAirYards": 1.0,
+    "totReceptions": 1.0,
+    "totTDs": 1.0,
+    "totTargets": 1,
+    "totYAC": 10.0,
+    "totYards": 11.0
+}

@@ -1,0 +1,37 @@
+{
+    "college": "Western Kentucky",
+    "headshot": "https://static.www.nfl.com/image/private/f_auto,q_auto/league/hwyzo6ydhes1cnashhln",
+    "name": "George Fant",
+    "number": 74.0,
+    "position": "OL",
+    "recYardsRank": [
+        2,
+        440
+    ],
+    "recsRank": [
+        1,
+        431
+    ],
+    "routePercentages": {
+        "OTHER": 1
+    },
+    "routeTree": [
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        }
+    ],
+    "tdsRank": [
+        5,
+        294
+    ],
+    "team": "SEA",
+    "totAirYards": 0.0,
+    "totReceptions": 1.0,
+    "totTDs": 0.0,
+    "totTargets": 1,
+    "totYAC": 9.0,
+    "totYards": 9.0
+}

@@ -1,0 +1,37 @@
+{
+    "college": "Illinois",
+    "headshot": "https://static.www.nfl.com/image/private/f_auto,q_auto/league/wfopcgclfi3ktpteckfd",
+    "name": "Justin Hardee",
+    "number": 34.0,
+    "position": "DB",
+    "recYardsRank": [
+        3,
+        438
+    ],
+    "recsRank": [
+        1,
+        431
+    ],
+    "routePercentages": {
+        "OTHER": 1
+    },
+    "routeTree": [
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        }
+    ],
+    "tdsRank": [
+        2,
+        294
+    ],
+    "team": "NO",
+    "totAirYards": 8.0,
+    "totReceptions": 1.0,
+    "totTDs": 0.0,
+    "totTargets": 1,
+    "totYAC": 2.0,
+    "totYards": 10.0
+}

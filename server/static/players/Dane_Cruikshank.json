@@ -1,0 +1,37 @@
+{
+    "college": "Arizona",
+    "headshot": "https://static.www.nfl.com/image/private/f_auto,q_auto/league/fqkurorbaxitcqullxao",
+    "name": "Dane Cruikshank",
+    "number": 29.0,
+    "position": "DB",
+    "recYardsRank": [
+        1,
+        328
+    ],
+    "recsRank": [
+        1,
+        431
+    ],
+    "routePercentages": {
+        "OTHER": 1
+    },
+    "routeTree": [
+        {
+            "postCatch": [],
+            "preCatch": [],
+            "preSnap": [],
+            "routeType": "OTHER"
+        }
+    ],
+    "tdsRank": [
+        1,
+        184
+    ],
+    "team": "TEN",
+    "totAirYards": 17.0,
+    "totReceptions": 1.0,
+    "totTDs": 1.0,
+    "totTargets": 1,
+    "totYAC": 49.0,
+    "totYards": 66.0
+}
