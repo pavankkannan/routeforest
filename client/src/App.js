@@ -240,7 +240,8 @@ function CatchStatistics({ data }) {
       }
       {mode === "field" && 
         <div>
-          <img src={`${API_URL}/players/fieldView/${data.name.replace(" ", "_")}`} className="field" alt='field' key={data.name}/>
+          <img src={`${API_URL}/static/fieldViews/${data.name.replace(" ", "_")}_FV.png`} className='field' alt='field' key={data.name}/>
+          {/* <img src={`${API_URL}/players/fieldView/${data.name.replace(" ", "_")}`} className="field" alt='field' key={data.name}/> */}
         </div>
       }
     </div>
